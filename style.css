@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clock {
+    position: relative;
+    width: 300px; /* Increased clock size */
+    height: 300px; /* Increased clock size */
+    border: 8px solid #333;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #333;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.time-hand {
+    position: absolute;
+    width: 6px;
+    height: 49.5%;
+    background-color: #333;
+    top: 0;
+    left: 49%;
+    transform-origin: 50% 100%; /* Set rotation point to the bottom center */
+    transform: translateX(-50%) rotate(0deg); /* Center the hand and set initial rotation */
+    transition: transform 0.1s ease-out;
+}
+
+.ad-container p {
+    margin: 0;
+    padding-top: 100px;
+    font-size: 14px;
+    color: #333;
+}
