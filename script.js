@@ -16,3 +16,22 @@ function updateClock() {
 // Update the clock every minute
 setInterval(updateClock, 60000); // 60,000 ms = 1 minute
 updateClock();  // Initial call to set the clock right away
+
+
+function updateTime() {
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = now.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    hours = hours % 12;
+    hours = hours ? hours : 12; // Convert '0' hour to '12'
+    const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+    const currentTime = `${hours}:${formattedMinutes} ${ampm}`;
+
+    document.getElementById('timeDisplay').textContent = currentTime;
+}
+
+// Update the time immediately and set an interval to update every minute
+updateTime();
+setInterval(updateTime, 60000);
